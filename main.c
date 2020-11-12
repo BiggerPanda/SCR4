@@ -36,24 +36,23 @@ int iter = 0;
 
   void catchTime(int singaln) {
 
-     for (int i = iter; i < iter+100; i++)
+      int a = iter+100;
+     for (iter; iter < a;)
      {
-        printf("%d %d\n", getpid(), i);
+        printf("%d %d\n", getpid(), iter++);
         signal(SIGINT,SIG_IGN);
         signal(SIGTERM, SIG_IGN);
         signal(SIGALRM, SIG_IGN);
-        signal(SIGUSR1, SIG_IGN);
         signal(SIGUSR2, SIG_IGN);
         usleep(DELAY);
      }
-      iter= iter+100;
+    
 
 
     signal(SIGINT,SIG_DFL);
     signal(SIGTERM, catchSendEnd);
     signal(SIGALRM, catchSendContinue);
-    signal(SIGUSR1, catchTime);
-    signal(SIGUSR2, catchIgnore);
+    signal(SIGUSR1,catchtimer);
 
  }
 
