@@ -1,0 +1,28 @@
+1.Zad1
+Przy uruchomieniu programu bez opóznienia program zuzywa prawie 80% zasobów procesora. 
+Po dodaniu usleep program zaczął zuzywać tylko 11% po czym spadło zuzycie
+2.Zad2
+
+blokada na 100 iteracji powoduje zablokowanie totalne sygnałów wysyłanych do programu.
+jedynie sygnał TERMINATE[15] nie jest ignorowany
+
+3.Zad3
+
+proc jest folderem przechowującym informacje o procesach działających na naszej maszynie.
+Kazdy folder procesu posiada różne informacje na temat działania i histori działania tego programu np 
+wejscia wyjscia z róznych folderów podfloder fd /proc/[PID]/fd 
+
+
+5.Zad5
+
+strace- służy do śledzenia sygnałów, lub funkcji systemowych na niższym poziomie. Polecenie te
+służy do wyświetlenia wszystkich funkcji systemowych wywołanych przez proces i wszystkie
+odbierane przez jego sygnały. Choć funkcje systemowe występują na stosunkowo niskim poziomie
+abstrakcji, zazwyczaj wywołanie polecenia śledzącego może sporo powiedzieć o aktywności
+procesu. Polecenie to nie tylko wyświetla nazwy wszystkich funkcji systemowych wywoływanych
+przez proces, ale również rozszyfrowuje ich argumenty i wyświetla kody wynikowe
+zwracane przez jądro.
+strace -f = umożliwia śledzenie procesów potomnych
+strace -e signal=[Set],statud=[Set] => universalna opcja do zmieniania danych do sledzenia np sygnałów statusów
+strace -p = ustawia śledzenie danej PID
+strace -u = ustawia sledzenie danego uzytkownika
